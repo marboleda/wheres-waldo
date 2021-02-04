@@ -4,6 +4,7 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import * as firebase from 'firebase';
+import 'firebase/firestore';
 
 const firebaseConfig = {
   apiKey: "AIzaSyB7HLl5lgWXk1XFfdaprzmSC54D2SO5czs",
@@ -14,6 +15,7 @@ const firebaseConfig = {
   appId: "1:132896620378:web:90b1831a52250e2df77d63"
 };
 firebase.initializeApp(firebaseConfig);
+const projectFirestore = firebase.firestore();
 
 ReactDOM.render(
   <React.StrictMode>
@@ -26,3 +28,5 @@ ReactDOM.render(
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
+
+export { projectFirestore }
