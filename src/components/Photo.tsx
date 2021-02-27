@@ -70,6 +70,7 @@ const Photo: React.FC<PhotoProps> = (props) => {
       {dropdownBox}
       {targetingBox}  
       <CharacterFoundMarker xCoord={1275} yCoord={1370} isCharacterFound={charactersFound[0]}></CharacterFoundMarker>
+      <CharacterFoundMarker xCoord={1290} yCoord={1075} isCharacterFound={charactersFound[1]}></CharacterFoundMarker>
     </PhotoContainer>
   );
 }
