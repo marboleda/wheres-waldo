@@ -19,6 +19,9 @@ const OptionBox = styled.div<BoxProps>`
 
 const Option = styled.a`
     width: 100%;
+    box-sizing: border-box;
+    height: 33.333%;
+    border: 2px solid black;
 `
 
 const DropdownBox: React.FC<BoxProps> = (props) => {
@@ -27,9 +30,9 @@ const DropdownBox: React.FC<BoxProps> = (props) => {
 
     return(
         <OptionBox xCoord={xCoord} yCoord={yCoord}>
-            <Option>Option1</Option>
-            <Option>Option2</Option>
-            <Option>Option3</Option>
+            <Option>Waldo</Option>
+            <Option>Wenda</Option>
+            <Option>Wizard</Option>
         </OptionBox>
     )
 }
