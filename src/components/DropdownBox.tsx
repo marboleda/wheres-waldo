@@ -6,6 +6,14 @@ interface BoxProps {
     yCoord: number;
 }
 
+interface DropdownBoxProps extends BoxProps {
+    handleClick: (character: string, x: number, y: number) => void;
+}
+
+interface OptionProps {
+    onClick: (character: string, x: number, y: number) => void;
+}
+
 const OptionBox = styled.div<BoxProps>`
     position: absolute;
     left: ${props => props.xCoord - 100}px;
@@ -17,7 +25,7 @@ const OptionBox = styled.div<BoxProps>`
     flex-direction: column;
 `
 
-const Option = styled.a`
+const Option = styled.a<OptionProps>`
     width: 100%;
     box-sizing: border-box;
     height: 33.333%;
@@ -27,15 +35,15 @@ const Option = styled.a`
     }
 `
 
-const DropdownBox: React.FC<BoxProps> = (props) => {
+const DropdownBox: React.FC<DropdownBoxProps> = (props) => {
 
-    const { xCoord, yCoord } = props;
+    const { xCoord, yCoord, handleClick } = props;
 
     return(
         <OptionBox xCoord={xCoord} yCoord={yCoord}>
-            <Option>Waldo</Option>
-            <Option>Wenda</Option>
-            <Option>Wizard</Option>
+            <Option onClick={() => handleClick('waldo', xCoord, yCoord)}>Waldo</Option>
+            <Option onClick={() => handleClick('wenda', xCoord, yCoord)}>Wenda</Option>
+            <Option onClick={() => handleClick('wizard', xCoord, yCoord)}>Wizard</Option>
         </OptionBox>
     )
 }

@@ -12,7 +12,14 @@ const PhotoContainer = styled.div`
 const Image = styled.img`
 `;
 
-const Photo = () => {
+interface PhotoProps {
+  dropdownSelect: (character: string, x: number, y: number) => void;
+}
+
+const Photo: React.FC<PhotoProps> = (props) => {
+
+  const { dropdownSelect } = props;
+
   const [targetingBoxCoords, setTargetingBoxCoords] = useState([-1, -1]);
   const [showBoxes, setShowBoxes] = useState(false);
 
@@ -23,6 +30,7 @@ const Photo = () => {
       const x = e.pageX - photo.offsetLeft;
       const y = e.pageY - photo.offsetTop;
       
+      console.log(x, y);
       setTargetingBoxCoords([x, y]);
       setShowBoxes(true);
     } else if (photo && showBoxes) {
@@ -30,7 +38,7 @@ const Photo = () => {
     }
   }
 
-  const dropdownBox = (showBoxes) ? <DropdownBox xCoord={targetingBoxCoords[0]} yCoord={targetingBoxCoords[1]}></DropdownBox> : null;
+  const dropdownBox = (showBoxes) ? <DropdownBox xCoord={targetingBoxCoords[0]} yCoord={targetingBoxCoords[1]} handleClick={dropdownSelect}></DropdownBox> : null;
   const targetingBox = (showBoxes) ? <TargetingBox xCoord={targetingBoxCoords[0]} yCoord={targetingBoxCoords[1]}></TargetingBox> : null;
 
   return (
