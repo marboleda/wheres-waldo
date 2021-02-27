@@ -12,7 +12,7 @@ const Box = styled.div<BoxProps>`
     top: ${props => props.yCoord}px;
     width: 100px;
     height: 100px;
-    border: 10px solid black;
+    border: 5px dashed black;
 `
 
 const TargetingBox: React.FC<BoxProps> = (props) => {

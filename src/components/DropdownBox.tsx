@@ -19,10 +19,11 @@ const OptionBox = styled.div<BoxProps>`
     left: ${props => props.xCoord - 100}px;
     top: ${props => props.yCoord}px;
     width: 100px;
-    border: 3px solid black;
+    border: 2px solid black;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
+    background-color: #d3d3d3;
 `
 
 const Option = styled.a<OptionProps>`
@@ -32,6 +33,7 @@ const Option = styled.a<OptionProps>`
     border: 2px solid black;
     &:hover {
         cursor: pointer;
+        color: #0000ff;
     }
 `
 
