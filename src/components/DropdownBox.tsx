@@ -22,6 +22,9 @@ const Option = styled.a`
     box-sizing: border-box;
     height: 33.333%;
     border: 2px solid black;
+    &:hover {
+        cursor: pointer;
+    }
 `
 
 const DropdownBox: React.FC<BoxProps> = (props) => {
