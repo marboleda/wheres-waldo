@@ -11,6 +11,6 @@ Demo: [Link](https://marboleda.github.io/wheres-waldo/)
 - Firebase Cloud Firestore database
 
 ## What did I learn?
-- How to integrate React with a Cloud Firestore back-end
+- How to integrate React with a Firebase Cloud Firestore back-end
 - CSS Positioning (static, relative, absolute)
 - How to use the pageX and pageY attributes to find a mouse click's coordinates
