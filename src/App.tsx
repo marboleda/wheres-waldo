@@ -2,10 +2,12 @@ import React , { useState } from 'react';
 import { projectFirestore } from '.';
 import './App.css';
 import Header from './components/Header';
-import Photo from './components/Photo'
+import Photo from './components/Photo';
+import Instructions from './components/Instructions';
 
 const App = () => {
   const [isCharacterFound, setIsCharacterFound] = useState(Array(3).fill(false));
+  const [isGameStarted, setIsGameStarted] = useState(false);
 
   const handleDropdownSelect = (character: string, x: number, y: number) => {
     projectFirestore.collection('placements').doc('image1').collection('characters').doc(character).get().then((character_info) => {
@@ -37,13 +39,20 @@ const App = () => {
     });
   } 
 
+  const handleStartGame = () => {
+    setIsGameStarted(true);
+  }
+
   return (
     <div className="App">
       <Header></Header>
-      <Photo 
+      {!isGameStarted && <Instructions
+        startGame={handleStartGame}>
+      </Instructions>}
+      {isGameStarted && <Photo 
         dropdownSelect={handleDropdownSelect}
         charactersFound={isCharacterFound}>  
-      </Photo>
+      </Photo>}
     </div>
   );
 }
