@@ -48,9 +48,9 @@ const Instructions: React.FC<InstructionsProps> = (props) => {
         <InstructionsScreen>
             <p>Find these characters!</p>
             <Characters>
-                <img src={waldo}/>
-                <img src={wenda} />
-                <img src={wizard} />
+                <img src={waldo} alt='Waldo'/>
+                <img src={wenda} alt='Wenda'/>
+                <img src={wizard} alt='Wizard'/>
             </Characters>
             <StartButton type='button' onClick={startGame}>START GAME</StartButton>
         </InstructionsScreen>
