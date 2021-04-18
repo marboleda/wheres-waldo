@@ -21,6 +21,9 @@ const InstructionsScreen = styled.div`
 const Characters = styled.div`
     display: flex;
     justify-content: center;
+    @media (max-width: 475px) {
+        flex-direction: column;
+    }
 `;
 
 const StartButton = styled.button`
@@ -29,6 +32,10 @@ const StartButton = styled.button`
     color: #7d1b1b;
     border: 3px solid #039be5;
     font-weight: bold;
+    font-size: 1rem;
+    @media (max-width: 390px) {
+        font-size: 0.75rem;
+    }
     margin-top: 20px;
     font-family: 'Optima-ExtraBlack';
 `;
@@ -41,7 +48,7 @@ const Instructions: React.FC<InstructionsProps> = (props) => {
         <InstructionsScreen>
             <p>Find these characters!</p>
             <Characters>
-                <img src={waldo} />
+                <img src={waldo}/>
                 <img src={wenda} />
                 <img src={wizard} />
             </Characters>
