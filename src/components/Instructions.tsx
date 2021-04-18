@@ -21,11 +21,17 @@ const InstructionsScreen = styled.div`
 const Characters = styled.div`
     display: flex;
     justify-content: center;
-`
+`;
 
 const StartButton = styled.button`
     width: 20vw;
-`
+    background-color: aliceblue;
+    color: #7d1b1b;
+    border: 3px solid #039be5;
+    font-weight: bold;
+    margin-top: 20px;
+    font-family: 'Optima-ExtraBlack';
+`;
 
 const Instructions: React.FC<InstructionsProps> = (props) => {
 
@@ -39,7 +45,7 @@ const Instructions: React.FC<InstructionsProps> = (props) => {
                 <img src={wenda} />
                 <img src={wizard} />
             </Characters>
-            <StartButton type='button' onClick={startGame}>Start Game</StartButton>
+            <StartButton type='button' onClick={startGame}>START GAME</StartButton>
         </InstructionsScreen>
     )
 }
