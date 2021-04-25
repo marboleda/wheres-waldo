@@ -31,7 +31,7 @@ const Header = () => {
     return (
         <Container>
             <Title><TitleText color='#039be5'>WHERE'S</TitleText> <TitleText color='#7d1b1b'>WALDO?</TitleText></Title>
-            <Logo src={logo}/>
+            <Logo src={logo} />
         </Container>
     )
 }

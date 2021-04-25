@@ -45,7 +45,7 @@ const App = () => {
 
   return (
     <div className="App">
-      <Header></Header>
+      <Header />
       {!isGameStarted && <Instructions
         startGame={handleStartGame}>
       </Instructions>}

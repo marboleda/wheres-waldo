@@ -20,8 +20,7 @@ const TargetingBox: React.FC<BoxProps> = (props) => {
     const { xCoord, yCoord } = props;
 
     return(
-        <Box xCoord={xCoord} yCoord={yCoord}>
-        </Box>
+        <Box xCoord={xCoord} yCoord={yCoord} />
     )
 }
 
